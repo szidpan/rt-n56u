@@ -80,6 +80,7 @@ if [ "$ID_FS_TYPE" == "msdos" -o "$ID_FS_TYPE" == "vfat" ] ; then
 	if [ -n "$kernel_vfat" ] ; then
 		func_load_module vfat
 		mount -t vfat "$dev_full" "$dev_mount" -o noatime,umask=0,iocharset=utf8,codepage=936,shortname=winnt
+                mount -t vfat /dev/sda1 /mnt
 	else
 		func_load_module exfat
 		mount -t exfat "$dev_full" "$dev_mount" -o noatime,umask=0,iocharset=utf8
